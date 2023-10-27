@@ -21,11 +21,14 @@ export default function Login() {
   const [userName, setuserName] = useState('')
   const [userPassword, setuserPassword] = useState('')
 
+  const [loginMessage, setloginMessage] = useState('')
+
   const onSubmitClicked = async (ev) => {
     ev.preventDefault();
     const data = { userName, userPassword };
     const response = await axios.post(`${process.env.NEXT_PUBLIC_DOMAIN}/signIn`, data)
     if (response.data.response.status === 201) {
+      setloginMessage(response.data.response.message)
       console.log(response.data.response)
       setCookie('userName', response.data.response.userName)
       setCookie('token', response.data.response.token)
@@ -33,6 +36,7 @@ export default function Login() {
       router.push(`/signInVerify`);
       return;
     } else if (response.data.response.status === 401) {
+      setloginMessage(response.data.response.message)
       console.log(response.data.response)
       setCookie('userName', response.data.response.userName)
       setCookie('token', response.data.response.token)
@@ -40,6 +44,7 @@ export default function Login() {
       router.push(`/signUpVerify`);
       return;
     } else {
+      setloginMessage(response.data.response.message)
       console.log(response.data.response.message)
       console.log("Error In signIn Page.")
       return;
@@ -76,7 +81,7 @@ export default function Login() {
               {<div className="text-violet-950 cursor-pointer hover:underline">{isLogin ? 'Dont have an account? Register!' : 'Already have an account? Login!'}</div>}
             </Link>
           </div>
-
+          <div className="text-red-500 text-center mb-4">{loginMessage}</div>
           <div className="flex justify-center flex-col items-center">
             <div onClick={ev => onSubmitClicked(ev)} className="cursor-pointer flex items-center bg-lime-500 text-white justify-center text-[1.06rem] leading-6 font-medium h-11 text-center w-64 rounded">{isLogin ? 'Login' : 'Register'} <i className="inline-block"></i></div>
           </div>

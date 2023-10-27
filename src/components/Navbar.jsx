@@ -55,7 +55,7 @@ export function Navbar() {
 
     if (response.data.response.status = 200) {
       console.log(response.data.response.message)
-      router.push('/')
+      window.location.reload();
       return;
     }
     console.log(response.data.response.message)
