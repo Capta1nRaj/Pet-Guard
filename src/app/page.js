@@ -53,7 +53,12 @@ export default function Home() {
                   </ul>
                   <div>
                     <div>
-                      <p>At PetGuard, our mission is to provide exceptional veterinary care and support to pets and their owners. We are dedicated to promoting the health and happiness of your beloved companions, through a combination of cutting-edge medical expertise and unwavering compassion. With a team of experienced veterinarians and a commitment to delivering personalized, client-centered service, we aim to ensure that every pet entrusted to our care receives the best treatment available.</p>
+                      <p>At PetGuard, our mission is to revolutionize pet care by seamlessly integrating compassion and innovation. We are dedicated to providing pet owners with a comprehensive platform that offers real-time assistance during emergencies, locates nearby care centers, and fosters a vibrant community. Our commitment extends to empowering pet owners with knowledge, promoting responsible care practices, and creating a supportive environment where experiences are shared. PetGuard is not just an application; it's a testament to our belief that technology can enhance the lives of pets and their owners, ensuring a future where every pet thrives and every owner feels confident and supported in their journey of companionship.
+
+
+
+
+                      </p>
                     </div>
                   </div>
                 </div>
